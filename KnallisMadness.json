@@ -1,0 +1,13 @@
+{
+	"id": "KnallisMadness",
+	"name": "Knalli's Madness",
+	"display_name": "Knalli's Madness",
+	"author": ["Dr. Knalli65"],
+	"description": "A little mod for funnsies.",
+	"prefix": "km",
+	"main_file": "main.lua",
+	"badge_color": "FF6A00",
+	"badge_text_color": "0A0F28",
+	"priority": "69",
+	"version": "0.1"
+}
