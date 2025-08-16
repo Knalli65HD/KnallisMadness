@@ -34,7 +34,7 @@ return {
 			j_km_hammah = {
 					name = 'Smithing Hammer',
 					text = {
-						"If a {C:attention}steel{} card is played",
+						"If a {C:attention,T:m_steel}Steel Card{} is played",
 						"{C:green}#1# in #2#{} chance to",
 						"upgrade level of",
 						"played {C:attention}poker hand{}",

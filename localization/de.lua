@@ -5,48 +5,47 @@ return {
 					name = 'Thatcher Effekt',
 					text = {
 						"Dieser Joker erhält",
-						"{X:mult,C:white} X#1# {} Mult every time", -- [[0.1]]--
-						"falls {C:attention} #2# {}is discarded",
-						"Bildrang ändert sich jede Runde",
-						"{C:inactive}(Currently {X:mult,C:white} X#3# {C:inactive} Mult)",
+						"{C:red,s:1.1}+#1#{} Mult jedesmal", -- [[0.1]]--
+						"wenn eine{C:attention} Bild Karte {}abgeworfen wurde",
+						"{C:inactive}(Momentan {C:red,s:1.1}+#2#{} {C:inactive} Mult)",
 					},
 				},
 				
 			j_km_tax_collector_bones = {
-					name = 'Tax-Collector Bones',
+					name = 'Steuern-Eintreiber Bones',
 					text = {
 						"Verhindert den Tod",
-						"if Money in bank",
-						"is at least {C:attention}Dollar per Percent",
-						"of the amount that is missing for the required chips",
-						"{S:1.1,C:red,E:2}self destructs and taxes thy tried death{}.",
+						"falls besitztes Geld",
+						"ist mindestens {C:attention}Dollar pro Prozent",
+						"von der Menge die von den benötigten Chips fehlt",
+						"{S:1.1,C:red,E:2}zerstört sich selbst und versteuert euren versuchten Tod{}.",
 					},
 				},
 				
 			j_km_fatal_curtain = {
-					name = 'Fatal Curtain',
+					name = 'Fataler Vorhang',
 					text = {
-						"Retrigger all",
-						"played {C:attention}face{} cards",
-						"and destroy them afterwards.",
+						"Löse nochmals alle",
+						"gespielten {C:attention}Bild{} Karten",
+						"und zerstöre sie danach.",
 					},
 				},
 				
 			j_km_hammah = {
 					name = 'Schmiedehammer',
 					text = {
-						"If a {C:attention}steel{} card is played",
-						"{C:green}#1# in #2#{} chance to",
-						"upgrade level of",
-						"played {C:attention}poker hand{}",
+						"Falls eine {C:attention,T:m_steel}Stahlkarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
 					},
 				},
 			j_km_beetlejuice = {
-					name = 'Beetle Juice',
+					name = 'Beetlejuice',
 					text = {
-						"Adds {X:mult,C:white} X#1# {} Mult",
-						"If played hand contains {C:attention}#2#{}",
-						"{S:1.1,C:red,E:2}self destructs afterwards{}."
+						"Addiert {X:mult,C:white} X#1# {} Mult",
+						"falls gespielte Hand {C:attention}#2#{} enthält",
+						"{S:1.1,C:red,E:2}zerstört sich selbst danach{}."
 					},
 				},
 			j_km_free_fall = {

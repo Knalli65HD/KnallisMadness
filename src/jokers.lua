@@ -7,7 +7,7 @@ SMODS.Atlas{
 
 SMODS.Joker{
 	key = 'thatcher',
-	config = { extra = { mult_gain = 0.1, rank = 'Jack', mult = 1 } },
+	config = { extra = { mult_gain = 0.1, mult = 4 } },
 	rarity = 2,
 	eternal_compat = true,
 	perishable_compat = true,
@@ -20,10 +20,16 @@ SMODS.Joker{
     end,
     calculate = function(self, card, context)
         if context.discard and not context.other_card.debuff and
-            context.other_card:is_face()then
+            context.other_card:is_face() then
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
+			return {
+				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult_gain } },
+				}
+		end
+		if context.joker_main then
             return {
-                     mult = card.ability.extra.mult}
+                mult = card.ability.extra.mult
+            }
         end
     end,
 	}
