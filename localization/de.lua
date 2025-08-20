@@ -39,6 +39,69 @@ return {
 						"Level der gespielten",
 						"{C:attention}Poker hand{} zu verbessern",
 					},
+				},	
+			j_km_cuttah = {
+					name = 'Glasschneider',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Glaskarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
+				},	
+			j_km_chisel = {
+					name = 'Stemmeisen',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Steinkarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
+				},	
+			j_km_swiss = {
+					name = 'Taschenmesser',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Wildcard{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
+				},	
+			j_km_gilding_brush = {
+					name = 'Blattgold-Pinsel',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Goldkarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
+				},	
+			j_km_buzzsaw = {
+					name = 'Kreissäge',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Multkarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
+				},	
+			j_km_scissors = {
+					name = 'Schere',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Glückskarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
+				},	
+			j_km_trowel = {
+					name = 'Kelle',
+					text = {
+						"Falls eine {C:attention,T:m_steel}Bonuskarte{} gespielt wird",
+						"{C:green}#1# in #2#{} Chance um das",
+						"Level der gespielten",
+						"{C:attention}Poker hand{} zu verbessern",
+					},
 				},
 			j_km_beetlejuice = {
 					name = 'Beetlejuice',
@@ -53,7 +116,7 @@ return {
 					text = {
 						"Dieser Joker erhält",
 						"{C:red,s:1.1}+#1#{} Mult jedesmal", -- [[0.1]]--
-						"wenn {C:attention} abgeworfene Hand {} die höchste Stufe hat",
+						"wenn{C:attention} abgeworfene Hand {}die höchste Stufe hat",
 						"{C:inactive}(Momentan {C:red,s:1.1}+#1#{} {C:inactive} Mult)",
 					},
 				},

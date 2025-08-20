@@ -97,40 +97,6 @@ SMODS.Joker{
 	}
 
 SMODS.Joker{
-	key = 'hammah',
-	rarity = 2,
-	cost = 6,
-	eternal_compat = false,
-	perishable_compat = false,
-	atlas = 'Jokers',
-	pos = {x = 3,y = 0},
-	unlocked = true,
-	config = { extra = { odds = 3 } },
-	loc_vars = function(self, info_queue, card)
-        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_hammah')
-        return { vars = { numerator, denominator, } }
-	end,
-	calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play and
-            SMODS.has_enhancement(context.other_card, 'm_steel') and 
-			SMODS.pseudorandom_probability(card, 'km_hammah', 1, card.ability.extra.odds) then
-            return {
-                level_up = true,
-                message = localize('k_level_up_ex')
-            }
-        end
-    end,
-	in_pool = function(self, args) 
-        for _, playing_card in ipairs(G.playing_cards or {}) do
-            if SMODS.has_enhancement(playing_card, 'm_steel') then
-                return true
-            end
-        end
-        return false
-    end,
-	}
-
-SMODS.Joker{
 	key = 'beetlejuice',
 	rarity = 3,
 	eternal_compat = false,
@@ -204,6 +170,7 @@ SMODS.Joker{
 	blueprint_compat = true,
 	atlas = 'Jokers',
 	pos = {x = 6,y = 0},
+	soul_pos = {x = 6, y = 1},
 	unlocked = true,
 	config = { extra = { mult_gain = 5, mult = 0 } },
 	loc_vars = function(self, info_queue, card)
@@ -235,3 +202,273 @@ SMODS.Joker{
 	end
 	}
 
+SMODS.Joker{
+	key = 'hammah',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 3,y = 0},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_hammah')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_steel') and 
+			SMODS.pseudorandom_probability(card, 'km_hammah', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_steel') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+
+SMODS.Joker{
+	key = 'cuttah',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 7,y = 0},
+	unlocked = true,
+	config = { extra = { odds = 2 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_cuttah')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_glass') and 
+			SMODS.pseudorandom_probability(card, 'km_cuttah', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_glass') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+
+SMODS.Joker{
+	key = 'swiss',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 8,y = 0},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_swiss')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_wild') and 
+			SMODS.pseudorandom_probability(card, 'km_swiss', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_wild') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+
+SMODS.Joker{
+	key = 'chisel',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 9,y = 0},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_chisel')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_stone') and 
+			SMODS.pseudorandom_probability(card, 'km_chisel', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_stone') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+
+SMODS.Joker{
+	key = 'gilding_brush',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 0,y = 1},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_brush')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_gold') and 
+			SMODS.pseudorandom_probability(card, 'km_brush', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_gold') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+
+SMODS.Joker{
+	key = 'buzzsaw',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 1,y = 1},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_buzzsaw')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_mult') and 
+			SMODS.pseudorandom_probability(card, 'km_buzzsaw', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_mult') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+SMODS.Joker{
+	key = 'trowel',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 3,y = 1},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_trowel')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_bonus') and 
+			SMODS.pseudorandom_probability(card, 'km_trowel', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_bonus') then
+                return true
+            end
+        end
+        return false
+    end,
+	}
+
+SMODS.Joker{
+	key = 'scissors',
+	rarity = 2,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	atlas = 'Jokers',
+	pos = {x = 2,y = 1},
+	unlocked = true,
+	config = { extra = { odds = 3 } },
+	loc_vars = function(self, info_queue, card)
+        local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'km_scissors')
+        return { vars = { numerator, denominator, } }
+	end,
+	calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play and
+            SMODS.has_enhancement(context.other_card, 'm_lucky') and 
+			SMODS.pseudorandom_probability(card, 'km_scissors', 1, card.ability.extra.odds) then
+            return {
+                level_up = true,
+                message = localize('k_level_up_ex')
+            }
+        end
+    end,
+	in_pool = function(self, args) 
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_lucky') then
+                return true
+            end
+        end
+        return false
+    end,
+	}

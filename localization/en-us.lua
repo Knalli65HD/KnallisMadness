@@ -40,6 +40,69 @@ return {
 						"played {C:attention}poker hand{}",
 					},
 				},
+			j_km_cuttah = {
+					name = 'Glass Cutter',
+					text = {
+						"If a {C:attention,T:m_steel}Glass Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
+			j_km_swiss = {
+					name = 'Multitool',
+					text = {
+						"If a {C:attention,T:m_steel}Wild Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
+			j_km_chisel = {
+					name = 'Chisel',
+					text = {
+						"If a {C:attention,T:m_steel}Stone Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
+			j_km_gilding_brush = {
+					name = 'Gilding Brush',
+					text = {
+						"If a {C:attention,T:m_steel}Gold Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
+			j_km_buzzsaw = {
+					name = 'Buzzsaw',
+					text = {
+						"If a {C:attention,T:m_steel}Mult Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
+			j_km_scissors = {
+					name = 'Scissors',
+					text = {
+						"If a {C:attention,T:m_steel}Lucky Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
+			j_km_trowel = {
+					name = 'Trowel',
+					text = {
+						"If a {C:attention,T:m_steel}Bonus Card{} is played",
+						"{C:green}#1# in #2#{} chance to",
+						"upgrade level of",
+						"played {C:attention}poker hand{}",
+					},
+				},
 			j_km_beetlejuice = {
 					name = 'Beetlejuice',
 					text = {
@@ -53,7 +116,7 @@ return {
 					text = {
 						"This Joker gains",
 						"{C:red,s:1.1}+#1#{} Mult every time", -- [[0.1]]--
-						"when {C:attention} discarded hand {} is the highest Level",
+						"when{C:attention} discarded hand {}is the highest Level",
 						"{C:inactive}(Currently {C:red,s:1.1}+#2#{} {C:inactive} Mult)",
 					},
 				},
@@ -62,7 +125,7 @@ return {
 					text = {
 						"This Joker gains",
 						"{C:red,s:1.1}+#1#{} Mult every time", -- [[0.1]]--
-						"when {C:attention} discarded hand {} is the most played",
+						"when{C:attention} discarded hand {}is the most played",
 						"{C:inactive}(Currently {C:red,s:1.1}+#2#{} {C:inactive} Mult)",
 					},
 				},
