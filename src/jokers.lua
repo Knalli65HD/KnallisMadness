@@ -8,7 +8,7 @@ SMODS.Atlas{
 SMODS.Joker{
 	key = 'thatcher',
 	config = { extra = { mult_gain = 0.1, mult = 4 } },
-	rarity = 2,
+	rarity = 1,
 	eternal_compat = true,
 	perishable_compat = true,
 	atlas = 'Jokers',
@@ -37,7 +37,7 @@ SMODS.Joker{
 	
 SMODS.Joker{
 	key = 'tax_collector_bones',
-	rarity = 3,
+	rarity = 2,
 	eternal_compat = false,
 	perishable_compat = false,
 	atlas = 'Jokers',
@@ -98,11 +98,11 @@ SMODS.Joker{
 
 SMODS.Joker{
 	key = 'beetlejuice',
-	rarity = 3,
+	rarity = 2,
 	eternal_compat = false,
 	perishable_compat = true,
 	blueprint_compat = false,
-	cost = 9,
+	cost = 3,
 	atlas = 'Jokers',
 	pos = {x = 4,y = 0},
 	unlocked = true,
@@ -123,7 +123,7 @@ SMODS.Joker{
 
 SMODS.Joker{
 	key = 'free_fall',
-	rarity = 1,
+	rarity = 2,
 	cost = 5,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -131,9 +131,9 @@ SMODS.Joker{
 	atlas = 'Jokers',
 	pos = {x = 5,y = 0},
 	unlocked = true,
-	config = { extra = { mult_gain = 2.5, mult = 2.5 } },
+	config = { extra = { Xmult_gain = 0.1, Xmult = 1 } },
 	loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult_gain , card.ability.extra.mult } }
+        return { vars = { card.ability.extra.Xmult_gain , card.ability.extra.Xmult } }
 	end,
 	calculate = function(self, card, context)
 		if context.pre_discard then
@@ -147,15 +147,15 @@ SMODS.Joker{
    			 end
   		  local scoring_name, _ = G.FUNCS.get_poker_hand_info(G.hand.highlighted)
    		 if scoring_name == max_key then
-    	    card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
+    	    card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
 			return {
-				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult_gain } },
+				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.Xmult } },
 				}
     		end
 		end
 		if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                xmult = card.ability.extra.Xmult
             }
         end
 	end
@@ -163,7 +163,7 @@ SMODS.Joker{
 
 	SMODS.Joker{
 	key = 'desire',
-	rarity = 1,
+	rarity = 2,
 	cost = 5,
 	eternal_compat = false,
 	perishable_compat = false,
@@ -172,9 +172,9 @@ SMODS.Joker{
 	pos = {x = 6,y = 0},
 	soul_pos = {x = 6, y = 1},
 	unlocked = true,
-	config = { extra = { mult_gain = 5, mult = 0 } },
+	config = { extra = { Xmult_gain = 0.2, Xmult = 1 } },
 	loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult_gain , card.ability.extra.mult } }
+        return { vars = { card.ability.extra.Xmult_gain , card.ability.extra.Xmult } }
 	end,
 	calculate = function(self, card, context)
 		if context.pre_discard then
@@ -188,15 +188,15 @@ SMODS.Joker{
    			 end
   		  local scoring_name, _ = G.FUNCS.get_poker_hand_info(G.hand.highlighted)
    		 if scoring_name == max_key then
-    	    card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
+    	    card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
 			return {
-				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult_gain } },
+				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.Xmult_gain } },
 				}
     		end
 		end
 		if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                xmult = card.ability.extra.Xmult
             }
         end
 	end
@@ -472,3 +472,181 @@ SMODS.Joker{
         return false
     end,
 	}
+
+SMODS.Joker {
+    key = "blindbuckler",
+    unlocked = true,
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 12,
+	atlas = 'Jokers',
+    pos = { x = 4, y = 1 },
+    config = { extra = { Xmult = 1 } },
+    loc_vars = function(self, info_queue, card)
+        local sell_cost = 0
+        for _, joker in ipairs(G.jokers and G.jokers.cards or {}) do
+            if joker ~= card then
+                sell_cost = sell_cost + joker.sell_cost
+            end
+        end
+        return { vars = { (card.ability.extra.Xmult * sell_cost) / 10 + 1 } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local sell_cost = 0
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker ~= card then
+                    sell_cost = sell_cost + joker.sell_cost
+                end
+            end
+            return {
+                xmult = (card.ability.extra.Xmult * sell_cost) / 10 + 1
+            }
+        end
+    end,
+}
+
+SMODS.Joker{
+		key = 'lieutenant',
+		rarity = 1,
+		cost = 4,
+		eternal_compat = false,
+		perishable_compat = false,
+		atlas = 'Jokers',
+		pos = {x = 5,y = 1},
+		unlocked = true,
+		config = { extra = { chips = 10 } },
+		loc_vars = function(self, info_queue, card)
+        local sell_cost = 0
+        for _, joker in ipairs(G.jokers and G.jokers.cards or {}) do
+            if joker ~= card then
+                sell_cost = sell_cost + joker.sell_cost
+            end
+        end
+        return { vars = { card.ability.extra.chips * sell_cost } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local sell_cost = 0
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker ~= card then
+                    sell_cost = sell_cost + joker.sell_cost
+                end
+            end
+            return {
+                chips = card.ability.extra.chips * sell_cost
+            }
+        end
+    end,
+	}
+SMODS.Joker {
+    key = "seawolf",
+    unlocked = true,
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 12,
+	atlas = 'Jokers',
+    pos = { x = 9, y = 1 },
+    config = { extra = { Xchips = 1 } },
+    loc_vars = function(self, info_queue, card)
+        local sell_cost = 0
+        for _, joker in ipairs(G.jokers and G.jokers.cards or {}) do
+            if joker ~= card then
+                sell_cost = sell_cost + joker.sell_cost
+            end
+        end
+        return { vars = { (card.ability.extra.Xchips * sell_cost) / 10 + 1 } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            local sell_cost = 0
+            for _, joker in ipairs(G.jokers.cards) do
+                if joker ~= card then
+                    sell_cost = sell_cost + joker.sell_cost
+                end
+            end
+            return {
+                xchips = (card.ability.extra.Xchips * sell_cost) / 10 + 1
+            }
+        end
+    end,
+}
+
+SMODS.Joker{
+	key = 'pyromaniac',
+	rarity = 1,
+	cost = 6,
+	eternal_compat = false,
+	perishable_compat = false,
+	blueprint_compat = true,
+	atlas = 'Jokers',
+	pos = {x = 7,y = 1},
+	unlocked = true,
+	config = { extra = { Xmult_gain = 0.1, Xmult = 1 } },
+	loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.Xmult_gain , card.ability.extra.Xmult } }
+	end,
+	calculate = function(self, card, context)
+		if context.joker_main and hand_chips * mult > G.GAME.blind.chips then
+    	    card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain
+			return {
+				message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.Xmult_gain } },
+				}
+    		end
+		if context.joker_main then
+            return {
+                xmult = card.ability.extra.Xmult
+            }
+        end
+	end
+	}	
+
+	SMODS.Joker {
+    key = "monialcere",
+    blueprint_compat = true,
+    perishable_compat = false,
+    rarity = 2,
+    cost = 6,
+	atlas = 'Jokers',
+	pos = {x = 8,y = 1},
+    config = { extra = { mult = 0 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.mult } }
+    end,
+    calculate = function(self, card, context)
+        if context.setting_blind and not context.blueprint then
+            local my_pos = nil
+            for i = 1, #G.jokers.cards do
+                if G.jokers.cards[i] == card then
+                    my_pos = i
+                    break
+                end
+            end
+            if my_pos and G.jokers.cards[my_pos - 1] and not SMODS.is_eternal(G.jokers.cards[my_pos - 1], card) and not G.jokers.cards[my_pos - 1].getting_sliced then
+                local sliced_card = G.jokers.cards[my_pos - 1]
+                sliced_card.getting_sliced = true
+                G.GAME.joker_buffer = G.GAME.joker_buffer - 1
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        G.GAME.joker_buffer = 0
+                        card.ability.extra.mult = card.ability.extra.mult + sliced_card.sell_cost * 2
+                        card:juice_up(0.8, 0.8)
+                        sliced_card:start_dissolve({ HEX("57ecab") }, nil, 1.6)
+                        play_sound('slice1', 0.96 + math.random() * 0.08)
+                        return true
+                    end
+                }))
+                return {
+                    message = localize { type = 'variable', key = 'a_mult', vars = { card.ability.extra.mult + 2 * sliced_card.sell_cost } },
+                    colour = G.C.RED,
+                    no_juice = true
+                }
+            end
+        end
+        if context.joker_main then
+            return {
+                mult = card.ability.extra.mult
+            }
+        end
+    end
+}

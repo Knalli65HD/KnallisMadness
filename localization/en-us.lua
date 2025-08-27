@@ -1,5 +1,13 @@
 return {
 	descriptions = {
+		Back = {
+			b_km_romme = {
+				name = 'Rommé Deck',
+				text = {"2 Decks in One",
+					   "{C:red}X#1#{} base Blind size",
+					   },
+			}
+		},
 		Joker = {
 			j_km_thatcher = {
 					name = 'Thatcher Effect',
@@ -106,29 +114,73 @@ return {
 			j_km_beetlejuice = {
 					name = 'Beetlejuice',
 					text = {
-						"Adds {C:red,s:1.1}+#1#{} Mult",
-						"If played hand contains {C:attention}#2#{}",
-						"{S:1.1,C:red,E:2}self destructs afterwards{}."
+						"{C:red,s:1.1}+#1#{} Mult if played hand contains",
+						"{C:attention}#2#{}",
+						"{S:1.1,C:red,E:2}self destructs{}."
 					},
 				},
 			j_km_free_fall = {
 					name = 'Free Fall',
 					text = {
 						"This Joker gains",
-						"{C:red,s:1.1}+#1#{} Mult every time", -- [[0.1]]--
+						"{X:mult,C:white}X#1#{} Mult every time", -- [[0.1]]--
 						"when{C:attention} discarded hand {}is the highest Level",
-						"{C:inactive}(Currently {C:red,s:1.1}+#2#{} {C:inactive} Mult)",
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive} Mult)",
 					},
 				},
 			j_km_desire = {
 					name = 'H A N D',
 					text = {
 						"This Joker gains",
-						"{C:red,s:1.1}+#1#{} Mult every time", -- [[0.1]]--
+						"{X:mult,C:white}X#1#{} Mult every time", -- [[0.1]]--
 						"when{C:attention} discarded hand {}is the most played",
-						"{C:inactive}(Currently {C:red,s:1.1}+#2#{} {C:inactive} Mult)",
+						"{C:inactive}(Currently {X:mult,C:white}X#2#{} {C:inactive} Mult)",
 					},
 				},
+			j_km_blindbuckler = {
+					name = 'Blindbuckler',
+					text = {
+						"Adds a {C:attention}tenth{} of the sell value",
+                 	  	"of all other owned {C:attention}Jokers{} to {X:mult,C:white} Xmult {}",
+                  		"{C:inactive}(Currently {X:mult,C:white} X#1# {}{C:inactive} Mult)",
+					},
+				},
+			j_km_lieutenant = {
+					name = 'Lieutenant',
+					text = {
+						"Adds the sell value",
+                 	  	"of all other owned",
+                 	 	"{C:attention}Jokers{} to {C:chips}10 Chips{} each Dollar",
+                  		"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Mult)",
+					},
+				},
+			j_km_seawolf = {
+					name = 'Sea Wolf',
+					text = {
+						"Adds a {C:attention}tenth{} of the sell value",
+                 	  	"of all other owned {C:attention}Jokers{} to {X:chips,C:white} Xchips {}",
+                  		"{C:inactive}(Currently {X:chips,C:white} X#1# {}{C:inactive} Chips)",
+					},
+				},
+			j_km_pyromaniac = {
+					name = 'Pyromaniac',
+					text = {
+						"This Joker gains",
+						"{X:mult,C:white} X#1# {} Mult every time", -- [[0.1]]--
+						"when scored hand is on fire",
+						"{C:inactive}(Currently {X:mult,C:white} X#2# {} {C:inactive} Mult)",
+					},
+				},
+			j_km_monialcere = {
+                name = "Reggad Monailcerum",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroy Joker to the left",
+                    "and permanently add {C:attention}double",
+                    "its sell value to this {C:red}Mult",
+                    "{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+                },
+            },
 			},
 		},
 	}
